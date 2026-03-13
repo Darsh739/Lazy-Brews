@@ -38,7 +38,7 @@ export function Footer() {
             <ul className="space-y-4">
               <li><a href="#" className="text-white/70 hover:text-primary transition-colors">Classic Cold Coffee</a></li>
               <li><a href="#" className="text-white/70 hover:text-primary transition-colors">Hazelnut Flavor</a></li>
-              <li><a href="#" className="text-white/70 hover:text-primary transition-colors">Vanilla Almond</a></li>
+              <li><a href="#" className="text-white/70 hover:text-primary transition-colors">Vanilla Cold Coffee</a></li>
               <li><a href="#" className="text-white/70 hover:text-primary transition-colors">Variety Pack</a></li>
             </ul>
           </div>
@@ -55,11 +55,18 @@ export function Footer() {
           
         </div>
         
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/50">
-          <p>© {new Date().getFullYear()} Lazy Brew's. All rights reserved.</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+        <div className="border-t border-white/10 pt-8 pb-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/50 mb-8">
+            <p>© {new Date().getFullYear()} Lazy Brew's. All rights reserved.</p>
+            <div className="flex gap-6">
+              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            </div>
+          </div>
+          
+          <div className="text-center border-t border-white/10 pt-8 space-y-4">
+            <p className="text-lg font-semibold text-primary">NEW RELEASES COMING SOON</p>
+            <p className="text-white/70">Contact Us On Whatsapp: <a href="https://wa.me/919930591820" className="text-primary hover:text-white transition-colors">9930591820</a></p>
           </div>
         </div>
       </div>

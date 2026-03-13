@@ -12,6 +12,7 @@ const flavors = [
     image: "bottle-classic.png",
     color: "bg-primary/10",
     badges: ["Zero Preservatives", "Zero Sugar"],
+    price: "Rs.59/100ml",
   },
   {
     id: "hazelnut",
@@ -20,14 +21,16 @@ const flavors = [
     image: "bottle-hazelnut.png",
     color: "bg-[#A67C52]/10", // Accent color tint
     badges: ["Natural Flavor"],
+    price: "Rs.89/100ml",
   },
   {
     id: "vanilla",
-    name: "Vanilla Almond",
-    description: "A dreamy combination of sweet vanilla and subtle almond undertones.",
+    name: "Vanilla Cold Coffee",
+    description: "Smooth, creamy vanilla notes that elevate your morning coffee experience.",
     image: "bottle-vanilla.png",
     color: "bg-[#E8D5C4]/30", // Lighter tint
     badges: ["Fan Favorite"],
+    price: "Rs.89/100ml",
   },
 ];
 
@@ -92,7 +95,7 @@ export function Flavors() {
                 <p className="text-muted-foreground mb-6 flex-grow">{flavor.description}</p>
                 
                 <div className="flex items-center justify-between mt-auto pt-4 border-t border-border">
-                  <span className="text-xl font-bold text-foreground">$14.99</span>
+                  <span className="text-xl font-bold text-foreground">{flavor.price}</span>
                   <Button 
                     variant="outline" 
                     className="rounded-xl group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all"
