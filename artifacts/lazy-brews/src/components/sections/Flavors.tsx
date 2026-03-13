@@ -60,7 +60,7 @@ export function Flavors() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
           {flavors.map((flavor, index) => (
             <motion.div
               key={flavor.id}
@@ -108,6 +108,19 @@ export function Flavors() {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="flex items-start gap-4 bg-primary/10 border border-primary/20 rounded-2xl px-6 py-5 max-w-2xl mx-auto"
+        >
+          <span className="text-2xl flex-shrink-0">💡</span>
+          <p className="text-sm text-foreground leading-relaxed">
+            <span className="font-semibold">Prefer it sweet?</span> Mix <span className="font-semibold">10–15 ml of sugar syrup</span> along with your cold brew and milk or water for a perfectly sweetened cup.
+          </p>
+        </motion.div>
       </div>
     </section>
   );
