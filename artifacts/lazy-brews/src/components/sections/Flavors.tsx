@@ -246,45 +246,46 @@ export function Flavors() {
                 <h3 className="text-2xl font-display font-bold text-foreground">Your Cart</h3>
               </div>
 
-              <div className="space-y-4 mb-6">
+              <div className="space-y-3 mb-6">
                 {cartItems.map((flavor) => (
                   <div
                     key={flavor.id}
-                    className="flex items-center gap-4 bg-background rounded-2xl px-5 py-4"
+                    className="bg-background rounded-2xl px-4 py-3 flex flex-col gap-2"
                   >
-                    <img
-                      src={`${import.meta.env.BASE_URL}images/${flavor.image}`}
-                      alt={flavor.name}
-                      className="w-12 h-12 object-contain flex-shrink-0"
-                    />
-                    <div className="flex-grow min-w-0">
-                      <p className="font-semibold text-foreground truncate">{flavor.name}</p>
-                      <p className="text-sm text-muted-foreground">{flavor.price}</p>
-                    </div>
-                    <div className="flex items-center gap-2 flex-shrink-0">
+                    {/* Top row: name + remove */}
+                    <div className="flex items-start justify-between gap-2">
+                      <div>
+                        <p className="font-semibold text-foreground text-sm leading-snug">{flavor.name}</p>
+                        <p className="text-xs text-muted-foreground">{flavor.price}</p>
+                      </div>
                       <button
-                        onClick={() => decrement(flavor.id)}
-                        className="w-7 h-7 rounded-full border border-border flex items-center justify-center hover:bg-muted transition-colors"
+                        onClick={() => removeItem(flavor.id)}
+                        className="text-muted-foreground hover:text-destructive transition-colors flex-shrink-0 mt-0.5"
                       >
-                        <Minus className="w-3 h-3" />
-                      </button>
-                      <span className="w-6 text-center font-bold text-sm">{cart[flavor.id]}</span>
-                      <button
-                        onClick={() => increment(flavor.id)}
-                        className="w-7 h-7 rounded-full border border-border flex items-center justify-center hover:bg-muted transition-colors"
-                      >
-                        <Plus className="w-3 h-3" />
+                        <Trash2 className="w-4 h-4" />
                       </button>
                     </div>
-                    <p className="w-24 text-right font-bold text-foreground flex-shrink-0">
-                      Rs.{flavor.priceValue * cart[flavor.id]}
-                    </p>
-                    <button
-                      onClick={() => removeItem(flavor.id)}
-                      className="text-muted-foreground hover:text-destructive transition-colors flex-shrink-0"
-                    >
-                      <Trash2 className="w-4 h-4" />
-                    </button>
+                    {/* Bottom row: qty controls + total */}
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <button
+                          onClick={() => decrement(flavor.id)}
+                          className="w-7 h-7 rounded-full border border-border flex items-center justify-center hover:bg-muted transition-colors"
+                        >
+                          <Minus className="w-3 h-3" />
+                        </button>
+                        <span className="w-5 text-center font-bold text-sm">{cart[flavor.id]}</span>
+                        <button
+                          onClick={() => increment(flavor.id)}
+                          className="w-7 h-7 rounded-full border border-border flex items-center justify-center hover:bg-muted transition-colors"
+                        >
+                          <Plus className="w-3 h-3" />
+                        </button>
+                      </div>
+                      <p className="font-bold text-foreground text-sm">
+                        Rs.{flavor.priceValue * cart[flavor.id]}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>
