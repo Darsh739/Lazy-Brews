@@ -307,8 +307,8 @@ export function Flavors() {
                 PRE ORDER NOW
               </motion.button>
 
-              <p className="text-xs text-muted-foreground text-center mt-3">
-                Tapping will open WhatsApp with your order details pre-filled.
+              <p className="text-sm text-muted-foreground text-center mt-3 leading-relaxed">
+                Pre order now to become a founding customer and redeem exclusive offers and insights to unreleased flavours by contacting us on WhatsApp.
               </p>
             </motion.div>
           )}
