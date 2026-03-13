@@ -4,6 +4,7 @@ import { Hero } from "@/components/sections/Hero";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { Flavors } from "@/components/sections/Flavors";
 import { Features } from "@/components/sections/Features";
+import { FoundingMember } from "@/components/sections/FoundingMember";
 import { Footer } from "@/components/layout/Footer";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
         <HowItWorks />
         <Flavors />
         <Features />
+        <FoundingMember />
       </main>
 
       <Footer />

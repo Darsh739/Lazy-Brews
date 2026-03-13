@@ -24,3 +24,11 @@ expertMode = true
 [postMerge]
 path = "scripts/post-merge.sh"
 timeoutMs = 20000
+
+[userenv]
+
+[userenv.shared]
+ADMIN_EMAIL = "agca.svp2@gmail.com"
+ADMIN_PASSWORD = "Smart@2007"
+JWT_SECRET = "9acbae3e9249045a8b10a4f8ad5fc2326dba2fd8ab1131221c5a794c1845e76f"
+GOOGLE_REDIRECT_URI = "/api/auth/google/callback"
