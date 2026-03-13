@@ -1,0 +1,23 @@
+packages:
+  "framer-motion": "For smooth scroll animations and premium page transitions"
+  "clsx": "Utility for constructing className strings conditionally"
+  "tailwind-merge": "Utility function to efficiently merge Tailwind CSS classes"
+  "@radix-ui/react-slot": "For accessible composable components"
+
+images:
+  - path: "artifacts/lazy-brews/public/images/hero-pour.png"
+    description: "A beautiful, bright, minimalist cinematic photograph of milk being poured into a stylish glass filled with ice and dark cold brew coffee. Placed on a smooth beige surface with soft, warm morning sunlight casting elegant shadows. High-end cafe aesthetic."
+    aspect_ratio: "16:9"
+  - path: "artifacts/lazy-brews/public/images/bottle-classic.png"
+    description: "A premium, sleek glass bottle of cold brew coffee concentrate. The label is minimal, elegant sky blue and warm beige. It sits isolated on a clean, soft beige pedestal with studio lighting, photorealistic."
+    aspect_ratio: "3:4"
+  - path: "artifacts/lazy-brews/public/images/bottle-hazelnut.png"
+    description: "A premium, sleek glass bottle of cold brew coffee concentrate. The label is minimal, elegant sky blue, beige, and subtle warm hazelnut brown accents. It sits isolated on a clean, soft beige pedestal with studio lighting, photorealistic."
+    aspect_ratio: "3:4"
+  - path: "artifacts/lazy-brews/public/images/bottle-vanilla.png"
+    description: "A premium, sleek glass bottle of cold brew coffee concentrate. The label is minimal, elegant sky blue, beige, and subtle creamy vanilla accents. It sits isolated on a clean, soft beige pedestal with studio lighting, photorealistic."
+    aspect_ratio: "3:4"
+
+notes:
+  - This is a static marketing site, no backend API calls required.
+  - Using Framer Motion for scroll-triggered reveal animations.
