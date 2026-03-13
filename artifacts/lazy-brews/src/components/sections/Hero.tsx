@@ -39,22 +39,6 @@ export function Hero() {
                 See How It Works
               </Button>
             </div>
-            
-            <div className="mt-10 flex items-center gap-4 text-sm text-muted-foreground font-medium">
-              <div className="flex -space-x-2">
-                {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="w-8 h-8 rounded-full border-2 border-background bg-secondary flex items-center justify-center overflow-hidden">
-                    {/* User avatars placeholder */}
-                    <img 
-                      src={`https://i.pravatar.cc/100?img=${i+10}`} 
-                      alt="User" 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                ))}
-              </div>
-              <p>Loved by 10,000+ coffee lovers</p>
-            </div>
           </motion.div>
           
           <motion.div 
