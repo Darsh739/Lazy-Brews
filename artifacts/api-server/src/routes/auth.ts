@@ -1,5 +1,6 @@
 import { Router, type IRouter } from "express";
 import admin from "firebase-admin";
+import { OAuth2Client } from "google-auth-library";
 import { db, membersTable } from "@workspace/db";
 import { eq } from "drizzle-orm";
 
@@ -59,6 +60,46 @@ router.post("/auth/firebase", async (req, res) => {
     if (err.message?.includes("credentials not configured")) {
       return res.status(503).json({ error: "Firebase not configured yet. Please set up credentials." });
     }
+    res.status(401).json({ error: "Invalid or expired token" });
+  }
+});
+
+router.post("/auth/google-verify", async (req, res) => {
+  const { credential } = req.body;
+
+  if (!credential) {
+    return res.status(400).json({ error: "Missing credential" });
+  }
+
+  const clientId = process.env.GOOGLE_CLIENT_ID;
+  if (!clientId) {
+    return res.status(503).json({ error: "Google Sign-In not configured" });
+  }
+
+  try {
+    const client = new OAuth2Client(clientId);
+    const ticket = await client.verifyIdToken({ idToken: credential, audience: clientId });
+    const payload = ticket.getPayload();
+
+    if (!payload || !payload.email) {
+      return res.status(400).json({ error: "Invalid token payload" });
+    }
+
+    const { sub: googleId, email, name = "Unknown", picture } = payload;
+
+    const existing = await db
+      .select()
+      .from(membersTable)
+      .where(eq(membersTable.googleId, googleId))
+      .limit(1);
+
+    if (existing.length === 0) {
+      await db.insert(membersTable).values({ googleId, name, email, picture: picture ?? null });
+    }
+
+    res.json({ success: true, name, email, picture: picture ?? null });
+  } catch (err: any) {
+    console.error("Google verify error:", err.message);
     res.status(401).json({ error: "Invalid or expired token" });
   }
 });
