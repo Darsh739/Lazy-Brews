@@ -74,16 +74,16 @@ export function Flavors() {
 
   const handlePreOrder = () => {
     const lines = cartItems.map(
-      (f) => `• ${f.name} x${cart[f.id]} (${f.price} each)`
+      (f) => `• ${f.name} — Rs.${f.priceValue} x ${cart[f.id]} = Rs.${f.priceValue * cart[f.id]}`
     );
     const message = [
-      "Hi! I'd like to pre-order from Lazy Brew's 🧋",
+      "Pre-Order from Lazy Brew's",
       "",
       ...lines,
       "",
-      `Total: Rs.${totalPrice} (for ${totalItems} unit${totalItems > 1 ? "s" : ""})`,
+      `Total: Rs.${totalPrice}`,
       "",
-      "Please let me know the next steps!",
+      "All our cold brews are steeped for 16–18 hours for that rich and smooth texture.",
     ].join("\n");
 
     const url = `https://wa.me/919930591820?text=${encodeURIComponent(message)}`;
@@ -307,9 +307,6 @@ export function Flavors() {
                 PRE ORDER NOW
               </motion.button>
 
-              <p className="text-sm text-muted-foreground text-center mt-3 leading-relaxed">
-                Pre order now to become a founding customer and redeem exclusive offers and insights to unreleased flavours.
-              </p>
             </motion.div>
           )}
         </AnimatePresence>
