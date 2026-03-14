@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight, Star, Clock } from "lucide-react";
 
 export function Hero() {
   return (
@@ -23,9 +23,14 @@ export function Hero() {
               <span>Premium Cold Brew Concentrate</span>
             </div>
             
-            <h1 className="text-5xl lg:text-7xl font-display font-bold text-foreground leading-[1.1] mb-6">
+            <h1 className="text-5xl lg:text-7xl font-display font-bold text-foreground leading-[1.1] mb-4">
               The Perfect Cold Coffee, <span className="text-primary italic">in Minutes.</span>
             </h1>
+
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+              <Clock className="w-3.5 h-3.5 flex-shrink-0" />
+              Steeped 16–18 hours for a rich, smooth finish
+            </div>
             
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed max-w-lg">
               Zero effort. Zero waiting. Mix our premium 1:1 concentrate with water or milk for cafe-quality iced coffee right at home.
