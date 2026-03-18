@@ -49,7 +49,12 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "src"),
-      "@assets": path.resolve(import.meta.dirname, "..", "..", "attached_assets"),
+      "@assets": path.resolve(
+        import.meta.dirname,
+        "..",
+        "..",
+        "attached_assets",
+      ),
     },
     dedupe: ["react", "react-dom"],
   },
@@ -59,7 +64,9 @@ export default defineConfig({
     emptyOutDir: true,
   },
   define: {
-    "import.meta.env.VITE_GOOGLE_CLIENT_ID": JSON.stringify(process.env.GOOGLE_CLIENT_ID ?? ""),
+    "import.meta.env.VITE_GOOGLE_CLIENT_ID": JSON.stringify(
+      process.env.GOOGLE_CLIENT_ID ?? "",
+    ),
   },
   server: {
     port,
