@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "0iW7-gMOREHukpu0O-OEJ"
+uri = "file://lazy-brews-source.tar.gz"
+type = "unspecified"
+title = "Lazy Brew's — Full Source Code"

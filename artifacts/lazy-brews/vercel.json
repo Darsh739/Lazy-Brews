@@ -1,0 +1,15 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://lazy-brews-api.onrender.com/api/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "buildCommand": "pnpm install && pnpm --filter @workspace/lazy-brews run build",
+  "outputDirectory": "artifacts/lazy-brews/dist/public",
+  "installCommand": "pnpm install"
+}

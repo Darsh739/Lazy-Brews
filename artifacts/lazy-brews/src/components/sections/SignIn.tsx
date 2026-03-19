@@ -70,7 +70,8 @@ export function SignIn() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch("/api/auth/google-verify", {
+      const apiBase = (import.meta.env.VITE_API_URL as string) || "";
+      const res = await fetch(`${apiBase}/api/auth/google-verify`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ credential: response.credential }),
