@@ -9,7 +9,7 @@
       "destination": "/index.html"
     }
   ],
-  "buildCommand": "pnpm install && pnpm --filter @workspace/lazy-brews run build",
-  "outputDirectory": "artifacts/lazy-brews/dist/public",
+  "buildCommand": "cd artifacts/lazy-brews && pnpm install --no-frozen-lockfile && pnpm build",
+  "outputDirectory": "artifacts/lazy-brews/dist",
   "installCommand": "pnpm install"
 }
