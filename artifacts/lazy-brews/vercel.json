@@ -9,7 +9,9 @@
       "destination": "/index.html"
     }
   ],
-  "buildCommand": "cd artifacts/lazy-brews && pnpm install --no-frozen-lockfile && pnpm build",
-  "outputDirectory": "artifacts/lazy-brews/dist",
+  {
+  "buildCommand": "pnpm install --no-frozen-lockfile && pnpm build",
+  "outputDirectory": "dist",
+}
   "installCommand": "pnpm install"
 }
